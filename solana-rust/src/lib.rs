@@ -8,9 +8,9 @@ use solana_program::{
 fn process_instruction(
     program_id: &Pubkey,
     accounts: &[AccountInfo],
-    instruction_data: &[u8]
+    solana logs: &[u8]
 ) -> ProgramResult {
-        msg!("{},{},{:?}", program_id, accounts.len(), instruction_data);
-        Ok(())
-    }
+    msg!("{},{},{:?}", program_id, accounts.len(), instruction_data);
+    Ok(())
+}
 entrypoint!(process_instruction);
