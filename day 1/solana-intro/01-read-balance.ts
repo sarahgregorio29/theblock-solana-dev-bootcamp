@@ -10,7 +10,7 @@ async function main() {
     console.log(endpoint)
 
     const connection = new Web3.Connection(endpoint) // this will connect to the endpoint specified
-    // const connection = new Web3.Connection('https://api.devnet.solana.com')
+    // const connection = new Web3.Connection('https://api.devnet.solana.com', 'processed')
     
     const balance = await connection.getBalance(PublicKey) // this will get the balance of the public key specified
     console.log('balance', balance)

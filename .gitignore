@@ -1,3 +1,37 @@
 .DS_Store
 .env
+.yarn
 /node_modules
+
+# REACTJS
+# dependencies
+app/node_modules
+app/.pnp
+app/.pnp.js
+
+# testing
+app/coverage
+
+# production
+app/build
+
+# misc
+app/.DS_Store
+app/.env.local
+app/.env.development.local
+app/.env.test.local
+app/.env.production.local
+app/src/idl.json
+
+app/npm-debug.log*
+app/yarn-debug.log*
+app/yarn-error.log*
+
+# ANCHOR
+anchor/.anchor
+anchor/.DS_Store
+anchor/target
+anchor/**/*.rs.bk
+anchor/node_modules
+anchor/test-ledger
+anchor/.yarn
