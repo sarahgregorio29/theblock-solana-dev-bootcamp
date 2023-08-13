@@ -5,9 +5,11 @@ import base58 from 'bs58'
 
 const keypairFromSecretKey = Web3.Keypair.fromSecretKey(base58.decode(process.env.PRIVATE_KEY as any))
 async function main() {
-    const movie = new Movie('The Matrix', 5, 'A movie about the matrix')
+    
     const publicKey = new Web3.PublicKey('e8YdVwLZzG16BJaAHaMxZHMZRzefdNMMzDMj5F1q4QW')
     const programId = new Web3.PublicKey('8GvHtgb3huq9QpkAniovPEcSeKwMRc3qAg2vcmzwtLwf')
+    
+    const movie = new Movie('The Matrix', 5, 'A movie about the matrix')
     const instruction = new Web3.TransactionInstruction({
         keys: [
             {
