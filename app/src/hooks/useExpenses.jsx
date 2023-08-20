@@ -19,8 +19,7 @@ export function useExpenses() {
     const { connection } = useConnection();
     const { wallet } = useWallet(); // for UI state e.g: wallet name, wallet connected
     const anchorWallet = useAnchorWallet(); // for AnchorProvider
-    
-    const programId = "EozGe4eZCQE3gTuJwUT8ufM4e7EAVc4VSnjP2nHax7om";
+    const programId = idl.programId;
 
     window.Buffer = buffer.Buffer;
 
@@ -34,6 +33,7 @@ export function useExpenses() {
 
     const handleAddExpenses = (tx, baseAccountPublicKey) => {
         if (inputText.trim() !== '') {
+            setTransactionPending(true);
             setTimeout(function() {
                 const record = fetchRecords(baseAccountPublicKey);
                 const programData = Promise.resolve(record);
@@ -50,8 +50,11 @@ export function useExpenses() {
                     setTotalExpenses(totalExpenses+inputAmount);
                 }).catch(err => {
                     console.log(err);
+                }).finally(err => {
+                    setTransactionPending(false);
                 });
             }, 1000);
+            
         }
     }
 
