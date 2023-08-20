@@ -44,13 +44,13 @@ export function useExpenses() {
                         amount: value.amount.toNumber(),
                     };
                     setExpenses([...expenses, newExpenses]);
-                    setTableKey('');
-                    setInputText('');
-                    setInputAmount(0);
                     setTotalExpenses(totalExpenses+inputAmount);
                 }).catch(err => {
                     console.log(err);
                 }).finally(err => {
+                    setTableKey('');
+                    setInputText('');
+                    setInputAmount(0);
                     setTransactionPending(false);
                 });
             }, 1000);
