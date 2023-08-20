@@ -109,7 +109,7 @@ export function useExpenses() {
             const provider = getProvider();
             const program = getProgram(provider);
 
-            return Promise.resolve(await program.account.record.fetch(baseAccountPublicKey));
+            return await program.account.record.fetch(baseAccountPublicKey);
 
         } catch(err) {
             console.log(err)
